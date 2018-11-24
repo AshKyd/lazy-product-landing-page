@@ -1,0 +1,241 @@
+@import "./reset.css";
+
+/* Accessible hide */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  left: -9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* System font stack https://css-tricks.com/snippets/css/system-font-stack/ */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  letter-spacing: 0.03em;
+  font-size: 18px;
+}
+
+.module-app {
+  --gutter: 1rem;
+  text-align: center;
+  font-size: 20px;
+}
+
+@media (min-width: 768px) {
+  .module-app {
+    font-size: 25px;
+  }
+}
+
+/* Standard type */
+.module-app h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .module-app h2 {
+    font-size: 4rem;
+  }
+}
+
+.module-app p {
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+.module-app blockquote {
+  font-style: italic;
+  text-align: justify;
+}
+.module-app figure {
+  margin-bottom: 4rem;
+}
+.module-app figcaption {
+  opacity: 0.6;
+  text-align: right;
+}
+
+.module-app .padding {
+  padding: var(--gutter);
+}
+.module-app .padding-tall {
+  padding-top: 3rem;
+}
+.module-app .inner {
+  max-width: 768px;
+  margin: 0 auto;
+}
+.module-app .inner-wide {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .module-app .padding {
+    padding: calc(var(--gutter) * 3);
+  }
+  .module-app .padding-tall {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+}
+
+.module-app__header * {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  list-style: none;
+}
+.module-app__header {
+  background: var(--darkBg);
+  color: var(--darkFg);
+  position: relative;
+  padding: 1rem var(--gutter);
+  text-align: left;
+}
+.module-app__header ul {
+  display: none;
+}
+.module-app__header img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: -0.3rem;
+}
+.module-app__header button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 4rem;
+  border: none;
+  background: transparent;
+}
+
+/* primary section */
+.module-app__section-primary {
+  text-align: center;
+  background: url("assets/overlay.svg"),
+    linear-gradient(var(--gradient1), var(--gradient2));
+  background-size: 100% 100%;
+  background-position: center;
+  color: var(--gradientFg2);
+}
+
+.module-app__section-primary h2 {
+  color: var(--gradientFg);
+}
+
+/* transition section */
+.module-app__section-gradient-to-dark {
+  background: url("assets/overlay-reversed.svg"),
+    linear-gradient(var(--gradient2), var(--darkBg));
+  background-size: 100% 100%;
+}
+
+/* Dark section */
+.module-app__section-dark {
+  background: var(--darkBg);
+  color: var(--darkFg);
+}
+.module-app__section-dark a {
+  color: var(--darkFg);
+}
+.module-app__section-dark a:hover,
+.module-app__section-dark a:focus {
+  background: var(--darkFg);
+  color: var(--darkBg);
+  text-decoration: none;
+}
+
+/* Light section */
+.module-app__section-light {
+  background: var(--lightBg);
+  color: var(--lightFg);
+}
+.module-app__section-light a {
+  color: var(--lightFg);
+}
+.module-app__section-light a:hover,
+.module-app__section-light a:focus {
+  background: var(--lightFg);
+  color: var(--lightBg);
+  text-decoration: none;
+}
+
+/* language icons */
+.module-app_points,
+.module-app_points li {
+  margin: 0;
+  padding: 0;
+}
+.module-app_points li {
+  display: inline-block;
+  position: relative;
+  width: 15%;
+  margin: 2rem 3rem;
+}
+.module-app_points img {
+  padding: 0.5rem;
+  border-radius: 100%;
+  background: var(--color, white);
+  box-sizing: border-box;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .module-app_points img {
+    width: 60%;
+  }
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1rem;
+  width: 80%;
+  max-width: 15rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  display: block;
+  margin: 0 auto;
+}
+.btn.btn-primary {
+  background: var(--buttonPrimaryBg);
+  color: var(--buttonPrimaryFg);
+}
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+  background: var(--buttonPrimaryBgActive);
+}
+.btn.btn-transparent-white {
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+}
+.btn-group .btn {
+  margin-bottom: 0.5rem;
+}
+
+/* Video module */
+.module-video {
+  display: block;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.module-video > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.module-video {
+  border-radius: 0.25rem;
+}
